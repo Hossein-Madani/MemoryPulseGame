@@ -57,6 +57,10 @@ public class CameraController : MonoBehaviour
     // For Moving
     private IEnumerator MoveCameraCoroutine(bool isGameStarted)
     {
+        if (isGameStarted) {
+            LevelManager.Instance.RespawnCubes();
+        }
+        
         Vector3 targetPosition = isGameStarted ? _camPlayPosition : _camMenuPosition;
         Vector3 startPos = transform.position;
         float elapsed = 0f;

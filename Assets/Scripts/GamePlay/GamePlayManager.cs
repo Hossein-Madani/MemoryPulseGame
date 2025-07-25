@@ -6,11 +6,11 @@ public class GamePlayManager : MonoBehaviour
     public static GamePlayManager Instance { get; private set; }
     
     [SerializeField] LevelManager _levelManager;
-    [SerializeField] private Camera _camera;
+    
 
     
 
-    [SerializeField] private float moveDuration = 1.0f;
+    
 
     
 
@@ -31,24 +31,7 @@ public class GamePlayManager : MonoBehaviour
     {
         Instance = this;
     }
-    private void Start()
-    {
-        ActiveButtons();
-       
-
-        
-    }
-    public void ActiveButtons() {
-        foreach (var button in MenuButtons ) {
-            button.isClickable = true;
-        }
-    }
-    public void DeActiveButtons() {
-        foreach (var button in MenuButtons)
-        {
-            button.isClickable = false;
-        }
-    }
+    
 
     public void OpenSettingDetails() {
         if (isSettingDetailsOpen)

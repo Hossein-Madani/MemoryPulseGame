@@ -48,6 +48,7 @@ public class StartButton : MonoBehaviour
         isClickable = false;
         //  DeActiveButtons();
         //  CameraController.Instance.ShakeCamera();
+
         CameraController.Instance.MoveCamera(true);
        
     }

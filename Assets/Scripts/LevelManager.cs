@@ -25,6 +25,10 @@ public class LevelManager : MonoBehaviour
     {
         Instance = this;
     }
+    public void RespawnCubes() {
+        _glowingCubeButtons = new List<GameObject>();
+        _tempCubeButtons = new List<GameObject>(_cubeButtons);
+    }
     public void ResetLevel()
     {
         ShatteredCube shattered = GameObject.FindFirstObjectByType<ShatteredCube>();
@@ -34,8 +38,7 @@ public class LevelManager : MonoBehaviour
         }
 
         _pressedCubeButtonNumber = 0;
-        _glowingCubeButtons = new List<GameObject>();
-        _tempCubeButtons = new List<GameObject>(_cubeButtons);
+        
 
         _currentPitch = 1f; // Reset pitch
 
